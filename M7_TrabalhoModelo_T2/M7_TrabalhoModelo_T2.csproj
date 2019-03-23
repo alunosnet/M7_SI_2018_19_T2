@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Alunos\Adicionar.aspx" />
+    <Content Include="Admin\Disciplinas\Adicionar.aspx" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
     <Content Include="css\bootstrap-reboot.css" />
@@ -88,6 +89,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Alunos\Adicionar.aspx.designer.cs">
+      <DependentUpon>Adicionar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Disciplinas\Adicionar.aspx.cs">
+      <DependentUpon>Adicionar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Disciplinas\Adicionar.aspx.designer.cs">
       <DependentUpon>Adicionar.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
@@ -116,7 +124,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\Disciplinas\" />
     <Folder Include="Admin\Notas\" />
     <Folder Include="Admin\Utilizadores\" />
     <Folder Include="Aluno\" />

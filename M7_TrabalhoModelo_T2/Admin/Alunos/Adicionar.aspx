@@ -20,17 +20,23 @@
             <asp:LinkButton runat="server" Text="Update" CommandName="Update" ID="UpdateButton" CausesValidation="True" />&nbsp;<asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="UpdateCancelButton" CausesValidation="False" />
         </EditItemTemplate>
         <InsertItemTemplate>
-            nome:
+            Nome:
             <asp:TextBox MaxLength="60" Text='<%# Bind("nome") %>' runat="server" ID="nomeTextBox" />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="O nome é obrigatório." ControlToValidate="nomeTextBox" CssClass="alert" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator><br />
-            morada:
+            Morada:
             <asp:TextBox MaxLength="100" Text='<%# Bind("morada") %>' runat="server" ID="moradaTextBox" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Tem de indicar uma morada." ControlToValidate="moradaTextBox" CssClass="alert-danger" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
             <br />
-            cp:
+            Código Postal:
             <asp:TextBox MaxLength="8" Text='<%# Bind("cp") %>' runat="server" ID="cpTextBox" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="cpTextBox" CssClass="alert-danger" Display="Dynamic" EnableClientScript="False" ErrorMessage="Tem de indicar o código postal."></asp:RequiredFieldValidator>
+            <asp:CustomValidator OnServerValidate="CustomValidator1_ServerValidate" ID="CustomValidator1" runat="server" ErrorMessage="O código postal está errado. Tem de estar no formato ####-###" ControlToValidate="cpTextBox" CssClass="alert-danger" Display="Dynamic" EnableClientScript="False"></asp:CustomValidator>
             <br />
             data_nascimento:
-            <asp:TextBox TextMode="Date" Text='<%# Bind("data_nascimento") %>' runat="server" ID="data_nascimentoTextBox" /><br />
+            <asp:TextBox TextMode="Date" Text='<%# Bind("data_nascimento") %>' runat="server" ID="data_nascimentoTextBox" />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Tem de indicar uma data de nascimento." ControlToValidate="data_nascimentoTextBox" CssClass="alert-danger" Display="Dynamic" EnableClientScript="False"></asp:RequiredFieldValidator>
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="A data de nascimento não é válida. A data tem de estar entre 1950 e 2050." ControlToValidate="data_nascimentoTextBox" CssClass="alert-danger" Display="Dynamic" EnableClientScript="False" Type="Date" MinimumValue="01-01-1950" MaximumValue="01-01-2050"></asp:RangeValidator>
+            <br />
             genero:
             <asp:DropDownList ID="DropDownList1" runat="server" SelectedValue='<%# Bind("genero") %>'>
                 <asp:ListItem Value="M">Masculino</asp:ListItem>
