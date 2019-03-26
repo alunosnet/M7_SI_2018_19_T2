@@ -4,6 +4,8 @@
 
 <html>
 <head runat="server">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/mycss.css" rel="stylesheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -14,6 +16,19 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+        <!--Aviso-->
+        <div id="divAviso" runat="server" class="fixed-bottom">
+            <footer class="footer">
+                <div class="text-muted">
+                    Este site utiliza cookies.
+                    <asp:Button runat="server" ID="Button1"
+                        Text="Aceitar" CssClass="btn btn-dark float-right" OnClick="Button1_Click"/>
+                </div>
+            </footer>
+        </div>
     </form>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
 </body>
 </html>
