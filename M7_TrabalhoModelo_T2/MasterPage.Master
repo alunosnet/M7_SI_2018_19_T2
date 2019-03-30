@@ -4,15 +4,93 @@
 
 <html>
 <head runat="server">
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/mycss.css" rel="stylesheet" />
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/mycss.css" rel="stylesheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
+            <!--Menu-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="index.aspx">SI - ESEN</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.aspx">Home</a>
+                    </li>
+                    <!--Menu do administrador-->
+                    <% if (Session["perfil"] != null && Session["perfil"].Equals("0"))
+                        { %>
+                    <!--Alunos-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Alunos</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="/Admin/Alunos/adicionar.aspx">Adicionar</a>
+                            <a class="dropdown-item" href="/Admin/Alunos/gerir.aspx">Gerir</a>
+                            <a class="dropdown-item" href="/Admin/Alunos/pesquisar.aspx">Pesquisar</a>
+                        </div>
+                    </li>
+                    <!--Alunos-->
+                    <!--Disciplinas-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Disciplinas</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown02">
+                            <a class="dropdown-item" href="/Admin/Disciplinas/adicionar.aspx">Adicionar</a>
+                            <a class="dropdown-item" href="/Admin/Disciplinas/gerir.aspx">Gerir</a>
+                            <a class="dropdown-item" href="/Admin/Disciplinas/pesquisar.aspx">Pesquisar</a>
+                        </div>
+                    </li>
+                    <!--Disciplinas-->
+                    <!--Notas-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notas</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown03">
+                            <a class="dropdown-item" href="/Admin/Notas/adicionar.aspx">Adicionar</a>
+                            <a class="dropdown-item" href="/Admin/Notas/gerir.aspx">Gerir</a>
+                            <a class="dropdown-item" href="/Admin/Notas/pesquisar.aspx">Pesquisar</a>
+                        </div>
+                    </li>
+                    <!--Notas-->
+                    <!--Utilizadores-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilizadores</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="/Admin/Utilizadores/adicionar.aspx">Adicionar</a>
+                            <a class="dropdown-item" href="/Admin/Notas/gerir.aspx">Gerir</a>
+                            <a class="dropdown-item" href="/Admin/Notas/pesquisar.aspx">Pesquisar</a>
+                        </div>
+                    </li>
+                    <!--Utilizadores-->
+                    <!--Consultas-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consultas</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown05">
+                            <a class="dropdown-item" href="/Admin/Consultas/Grafico.aspx">Gráfico</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/logout.aspx">Terminar sessão</a></li>
+                    <!--Consultas-->
+                    <!--Menu do administrador-->
+                    <%} %>
+                    <!--Menu do aluno-->
+                    <% if (Session["perfil"] != null && Session["perfil"].Equals("1"))
+                        { %>
+                    <li class="nav-item"><a class="nav-link" href="/Aluno/perfil_aluno.aspx">Meu Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Aluno/notas_aluno.aspx">Minhas Notas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout.aspx">Terminar Sessão</a></li>
+                    <%} %>
+                    <!--Menu do aluno-->
+                </ul>
+            </div>
+        </nav>
+        <!--Menu-->
+
     <form id="form1" runat="server">
-        <div>
+        <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
@@ -27,8 +105,8 @@
             </footer>
         </div>
     </form>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
 </body>
 </html>
