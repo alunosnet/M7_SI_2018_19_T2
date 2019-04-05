@@ -58,6 +58,24 @@ namespace M7_TrabalhoModelo_T2 {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// DetailsView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DetailsView DetailsView1;
+        
+        /// <summary>
+        /// SqlLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlLogin;
+        
+        /// <summary>
         /// DivCursos control.
         /// </summary>
         /// <remarks>
