@@ -11,9 +11,11 @@ namespace M7_TrabalhoModelo_T2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //iniciou sessão?
+            if (Session["perfil"] != null)
+                DivLogin.Visible = false;
         }
-
+        //evento: OnDataBound
         protected void DetailsView1_DataBinding(object sender, EventArgs e)
         {
             //verificar se o login falhou
