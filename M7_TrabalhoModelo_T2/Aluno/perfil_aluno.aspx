@@ -32,6 +32,7 @@
             <asp:LinkButton runat="server" Text="Insert" CommandName="Insert" ID="InsertButton" CausesValidation="True" />&nbsp;<asp:LinkButton runat="server" Text="Cancel" CommandName="Cancel" ID="InsertCancelButton" CausesValidation="False" />
         </InsertItemTemplate>
         <ItemTemplate>
+            <asp:Image ImageUrl='<%# Eval("nprocesso","~/Imagens/{0}.jpg") %>' Width="150px" ID="Image1" runat="server" />
             nprocesso:
             <asp:Label Text='<%# Eval("nprocesso") %>' runat="server" ID="nprocessoLabel" /><br />
             nome:

@@ -47,5 +47,18 @@ namespace M7_TrabalhoModelo_T2.Admin.Alunos
                 return;
             }
         }
+
+        protected void SqlAlunos_Inserted(object sender, SqlDataSourceStatusEventArgs e)
+        {
+            //o nprocesso do aluno novo
+            string nprocesso = e.Command.Parameters["@novo"].Value.ToString();
+            //guardar a imagem na pasta imagens
+            FileUpload ficheiro = FormView1.FindControl("FileUpload1") as FileUpload;
+            //verificar se existe um ficheiro
+            if (ficheiro.HasFile)
+            {
+                ficheiro.SaveAs(Server.MapPath("~/Imagens/") + nprocesso + ".jpg");
+            }
+        }
     }
 }

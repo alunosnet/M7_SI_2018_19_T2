@@ -21,7 +21,8 @@ namespace M7_TrabalhoModelo_T2
             //verificar se o login falhou
             if(DetailsView1.Rows.Count==0)
             {
-                Label1.Text = "Erro. O login falhou.";
+                if(IsPostBack)
+                    Label1.Text = "Erro. O login falhou.";
                 return;
             }
             //iniciar sessão
