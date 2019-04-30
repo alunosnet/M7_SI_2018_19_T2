@@ -33,7 +33,7 @@
         </InsertItemTemplate>
         <ItemTemplate>
             <asp:Image ImageUrl='<%# Eval("nprocesso","~/Imagens/{0}.jpg") %>' Width="150px" ID="Image1" runat="server" />
-            nprocesso:
+            <br />nprocesso:
             <asp:Label Text='<%# Eval("nprocesso") %>' runat="server" ID="nprocessoLabel" /><br />
             nome:
             <asp:Label Text='<%# Bind("nome") %>' runat="server" ID="nomeLabel" /><br />

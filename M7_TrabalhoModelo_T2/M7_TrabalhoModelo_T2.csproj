@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -72,6 +73,7 @@
     <Content Include="Admin\Alunos\Editar.aspx" />
     <Content Include="Admin\Alunos\Gerir.aspx" />
     <Content Include="Admin\Alunos\pesquisar.aspx" />
+    <Content Include="Admin\Consultas\Grafico.aspx" />
     <Content Include="Admin\Disciplinas\Adicionar.aspx" />
     <Content Include="Admin\Disciplinas\Gerir.aspx" />
     <Content Include="Admin\Disciplinas\pesquisar.aspx" />
@@ -140,6 +142,13 @@
     </Compile>
     <Compile Include="Admin\Alunos\pesquisar.aspx.designer.cs">
       <DependentUpon>pesquisar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Consultas\Grafico.aspx.cs">
+      <DependentUpon>Grafico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Consultas\Grafico.aspx.designer.cs">
+      <DependentUpon>Grafico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Disciplinas\Adicionar.aspx.cs">
       <DependentUpon>Adicionar.aspx</DependentUpon>
